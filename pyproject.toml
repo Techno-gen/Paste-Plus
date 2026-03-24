@@ -13,7 +13,6 @@ dependencies = [
     "pyperclip>=1.8",
     "keyboard>=0.13",
     "rich>=13.0",
-    "pyfiglet>=1.0",
 ]
 
 [project.scripts]

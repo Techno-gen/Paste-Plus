@@ -18,27 +18,20 @@ console = Console(stderr=True, highlight=False)
 
 # ── ASCII art ─────────────────────────────────────────────────────────────────
 
-_BANNER_FALLBACK = r"""
-  ___  _   ___ _____ ___     ___ _    _   _ ___
- | _ \/_\ / __|_   _| __|   | _ \ |  | | | / __|
- |  _/ _ \\__ \ | | | _|    |  _/ |__| |_| \__ \
- |_|/_/ \_\___/ |_| |___|   |_| |____|\___/|___/
-"""
-
-
-def _get_banner_art() -> str:
-    try:
-        from pyfiglet import figlet_format
-        return figlet_format("PASTE+", font="slant").rstrip()
-    except Exception:
-        return _BANNER_FALLBACK.strip()
+_BANNER_ART = (
+    "    ____             __           \n"
+    "   / __ \\____ ______/ /____    __ \n"
+    "  / /_/ / __ `/ ___/ __/ _ \\__/ /_\n"
+    " / ____/ /_/ (__  ) /_/  __/_  __/\n"
+    "/_/    \\__,_/____/\\__/\\___/ /_/   "
+)
 
 
 # ── Public display functions ──────────────────────────────────────────────────
 
 def show_banner(cfg: Config, source_label: str, dry_run: bool = False) -> None:
     """Print the splash banner + config summary."""
-    art = _get_banner_art()
+    art = _BANNER_ART
 
     # Styled art panel
     art_text = Text(art, style="bold cyan", justify="center")
