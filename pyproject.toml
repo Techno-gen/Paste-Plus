@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paste-plus"
+version = "0.1.0"
+description = "CLI tool that emulates human typing with configurable humanization"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.0",
+    "pyautogui>=0.9.54",
+    "pyperclip>=1.8",
+    "keyboard>=0.13",
+    "rich>=13.0",
+    "pyfiglet>=1.0",
+]
+
+[project.scripts]
+paste-plus = "paste_plus.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["paste_plus*"]

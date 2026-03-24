@@ -1,0 +1,17 @@
+{
+  "startup_delay": 3.0,
+  "wpm": 80,
+  "wpm_variance": 15,
+  "typo_rate": 0.04,
+  "retype_rate": 0.02,
+  "retype_min_chars": 3,
+  "retype_max_chars": 12,
+  "pause_frequency": 0.08,
+  "pause_min_seconds": 0.4,
+  "pause_max_seconds": 2.5,
+  "posthoc_correction_rate": 0.15,
+  "posthoc_max_corrections": 3,
+  "fail_safe": true,
+  "inter_key_floor_ms": 10,
+  "trigger_key": null
+}
