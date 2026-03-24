@@ -13,10 +13,8 @@ from rich.text import Text
 from paste_plus import __version__
 from paste_plus.config import Config
 
-# All UI output goes to stderr so it never pollutes piped stdout
+# All UI output goes to stderr so doesn't pollute clipboard out
 console = Console(stderr=True, highlight=False)
-
-# ── ASCII art ─────────────────────────────────────────────────────────────────
 
 _BANNER_ART = (
     "    ____             __           \n"
@@ -27,13 +25,13 @@ _BANNER_ART = (
 )
 
 
-# ── Public display functions ──────────────────────────────────────────────────
+# Actual display components
 
 def show_banner(cfg: Config, source_label: str, dry_run: bool = False) -> None:
     """Print the splash banner + config summary."""
     art = _BANNER_ART
 
-    # Styled art panel
+    # Art panel
     art_text = Text(art, style="bold cyan", justify="center")
     subtitle = Text(
         f"Human Typing Emulator  ·  v{__version__}",
@@ -48,7 +46,7 @@ def show_banner(cfg: Config, source_label: str, dry_run: bool = False) -> None:
 
     console.print(Panel(header_text, border_style="cyan", padding=(1, 4)))
 
-    # Config summary table
+    # Summary of configs
     table = Table(show_header=False, box=None, padding=(0, 2), expand=False)
     table.add_column(style="dim")
     table.add_column(style="bold white")
@@ -112,7 +110,7 @@ def show_countdown(seconds: float) -> None:
         if frac > 0:
             time.sleep(frac)
 
-    # Brief "GO" flash
+    # Brief GO flash
     console.print(
         Panel(
             Text("Typing now!", style="bold green", justify="center"),

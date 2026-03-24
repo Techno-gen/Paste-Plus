@@ -5,7 +5,7 @@ import time
 from dataclasses import dataclass
 from typing import Optional, Protocol
 
-# ── QWERTY adjacency map ──────────────────────────────────────────────────────
+# QWERTY adjacency map to see where you can screw up
 
 _ADJACENCY: dict[str, list[str]] = {
     "1": ["2", "q"],              "2": ["1", "3", "q", "w"],
@@ -45,7 +45,7 @@ def _adjacent(ch: str) -> list[str]:
     return [n for n in _ADJACENCY.get(ch.lower(), []) if n in _SAFE_CHARS]
 
 
-# ── Humanizer ─────────────────────────────────────────────────────────────────
+# Main humanizer class
 
 @dataclass
 class TypoEvent:
@@ -92,7 +92,7 @@ class Humanizer:
     def retype_resume(self) -> float: return self._rng.uniform(0.05, 0.15)
 
 
-# ── Keyboard backends ─────────────────────────────────────────────────────────
+# Keyboard backend interface + implementations
 
 class KeyboardBackend(Protocol):
     def type_char(self, ch: str) -> None: ...
@@ -153,7 +153,7 @@ class DryRunKeyboard:
         e = f"SLEEP {seconds:.3f}s"; self.log.append(e); print(e)
 
 
-# ── Post-hoc correction planner ───────────────────────────────────────────────
+# Post-hoc correction planning and execution
 
 @dataclass
 class _Correction:
@@ -212,7 +212,7 @@ class PosthocPlan:
             kb.hotkey("ctrl", "end")
 
 
-# ── Typing session ────────────────────────────────────────────────────────────
+# Typing class that orchestrates the whole process
 
 class TypingSession:
     def __init__(self, text: str, cfg, kb: KeyboardBackend, verbose: bool = False) -> None:
@@ -291,6 +291,7 @@ class TypingSession:
             try:
                 import keyboard as kb_lib
                 kb_lib.wait(self._cfg.trigger_key)
+                kb_lib.unhook_all()
                 ui.show_ready()
             except ImportError:
                 ui.show_warning("'keyboard' not installed — falling back to 3s delay. pip install keyboard")

@@ -13,5 +13,5 @@
   "posthoc_max_corrections": 3,
   "fail_safe": true,
   "inter_key_floor_ms": 10,
-  "trigger_key": null
+  "trigger_key": "f9"
 }

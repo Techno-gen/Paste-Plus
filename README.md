@@ -33,3 +33,27 @@ pip install -e .
 > **Windows only.** Keystroke emulation via `pyautogui` requires a display and may not reach UAC-elevated windows without running as Administrator.
 
 ---
+
+## Usage
+
+```bash
+# Type from clipboard (default) — press F9 to start
+paste-plus
+
+# Type from a file
+paste-plus myfile.txt
+
+# Type from stdin
+echo "Hello world" | paste-plus
+
+# Adjust speed and typo rate
+paste-plus --wpm 120 --typo-rate 0.08 myfile.txt
+
+# Preview without typing
+paste-plus --dry-run myfile.txt
+
+# Use a countdown instead of trigger key
+paste-plus --trigger-key "" --delay 5
+```
+
+Run `paste-plus -h` for the full list of options.

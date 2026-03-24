@@ -23,7 +23,7 @@ class Config:
     posthoc_max_corrections: int = 3
     fail_safe: bool = True
     inter_key_floor_ms: int = 10
-    trigger_key: Optional[str] = None  # e.g. "f9" — if set, waits for this key instead of delay
+    trigger_key: Optional[str] = "f9"  # waits for this key before typing; set to null to use countdown
 
     def validate(self) -> None:
         def _clamp_rate(name: str) -> None:
