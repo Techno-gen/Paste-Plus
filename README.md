@@ -6,7 +6,7 @@
 /_/    \__,_/____/\__/\___/ /_/   
 ```
 ### A command line utility designed to bypass annoying copy/paste history protections.
-Paste Plus emulates keystrokes, pauses, grammatical errors, and fixes, to simulate a real person typing.
+Paste Plus emulates keystrokes, pauses, grammatical errors, and fixes to simulate a real person typing.
 
 ## Features
 - Transposition typos (teh instead of the)
