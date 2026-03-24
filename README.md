@@ -9,21 +9,23 @@
 Paste Plus emulates keystrokes, pauses, grammatical errors, and fixes, to simulate a real person typing.
 
 ## Features
-- **Transposition typos**(teh instead of the)
-- **Double-strike errors**(helllo)
-- **Shift key mistakes**
-- **Per-word WPM scaling**
-- **"Burst" mode**(occasional fast runs followed by normal to slow typing speed)
-- **Watch clipboard for changes and auto-type when new content is copied**
-- **Allows for multi-file input**(typing several files in sequence)
-- **Preview mode**(show humanized text diff before typing)
-- **Many choices for configuration**
+- Transposition typos (teh instead of the)
+- Double-strike errors (helllo)
+- Shift key mistakes
+- Per-word WPM scaling
+- "Burst" mode (occasional fast runs followed by normal to slow typing speed)
+- Watch clipboard for changes and auto-type when new content is copied
+- Allows for multi-file input (typing several files in sequence)
+- Preview mode(show humanized text diff before typing)
+- Many choices for configuration
 
 ---
 
 ## Installation
 
 ```bash
+git clone https://github.com/Techno-gen/Paste-Plus
+cd Paste-Plus
 pip install -r requirements.txt
 pip install -e .
 ```
