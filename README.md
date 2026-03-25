@@ -23,6 +23,7 @@ Paste Plus emulates keystrokes, pauses, grammatical errors, and fixes to simulat
 
 ## Installation
 
+### Build from source
 ```bash
 git clone https://github.com/Techno-gen/Paste-Plus
 cd Paste-Plus
@@ -30,14 +31,18 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
+### Prebuilt install
+Simply download the executable from the releases page and run it normally.
+
 > **Windows only.** Keystroke emulation via `pyautogui` requires a display and may not reach UAC-elevated windows without running as Administrator.
 
 ---
-
+pyinstaller --onefile --name paste-plus --collect-all rich paste_plus/__main__.py
 ## Usage
 
 ```bash
 # Type from clipboard (default) — press F9 to start
+# Think of this like an alternative paste button, you just have to have paste-plus running in the background.
 paste-plus
 
 # Type from a file
