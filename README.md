@@ -36,6 +36,10 @@ Simply download the executable from the releases page and run it normally.
 
 > **Windows only.** Keystroke emulation via `pyautogui` requires a display and may not reach UAC-elevated windows without running as Administrator.
 
+## Screenshots
+<img src="https://github.com/Techno-gen/Paste-Plus/Screenshots/Starthisgif.gif" width="75%">
+<img src="https://github.com/Techno-gen/Paste-Plus/Screenshots/HomePage.png" width="75%">
+
 ## Usage
 
 ```bash
