@@ -36,8 +36,6 @@ Simply download the executable from the releases page and run it normally.
 
 > **Windows only.** Keystroke emulation via `pyautogui` requires a display and may not reach UAC-elevated windows without running as Administrator.
 
----
-pyinstaller --onefile --name paste-plus --collect-all rich paste_plus/__main__.py
 ## Usage
 
 ```bash
