@@ -62,5 +62,5 @@ paste-plus --trigger-key "" --delay 5
 Run `paste-plus -h` for the full list of options.
 
 ## Screenshots
-<img src="https://github.com/Techno-gen/Paste-Plus/blob/main/Screenshots/Starthisgif.gif" width="75%"><br/>
 <img src="https://github.com/Techno-gen/Paste-Plus/blob/main/Screenshots/Homepage.png" width="75%">
+<img src="https://github.com/Techno-gen/Paste-Plus/blob/main/Screenshots/Starthisgif.gif" width="50%"><br/>
