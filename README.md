@@ -32,7 +32,7 @@ pip install -e .
 ```
 
 ### Prebuilt install
-Simply download the executable from the releases page and run it normally.
+Simply download the executable from the releases page and run it normally. Keep in mind that the app will close when the text is written.
 
 > **Windows only.** Keystroke emulation via `pyautogui` requires a display and may not reach UAC-elevated windows without running as Administrator.
 
