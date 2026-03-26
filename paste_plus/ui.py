@@ -34,7 +34,7 @@ def show_banner(cfg: Config, source_label: str, dry_run: bool = False) -> None:
     # Art panel
     art_text = Text(art, style="bold cyan", justify="center")
     subtitle = Text(
-        f"Human Typing Emulator  ·  v{__version__}",
+        f"Typing Emulator  ·  v{__version__}",
         style="dim",
         justify="center",
     )

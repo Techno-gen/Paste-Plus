@@ -199,14 +199,15 @@ class PosthocPlan:
                     f"[green]{c.correct_char!r}[/green] at {c.char_index}[/dim]"
                 )
             kb.sleep(random.uniform(0.5, 2.0))
-            target = text_len - c.char_index
+            # Navigate so cursor is right AFTER the wrong char, then backspace it
+            target = text_len - c.char_index - 1
             for _ in range(target - cursor):
                 kb.press_key("left"); kb.sleep(0.05)
             cursor = target
             kb.sleep(random.uniform(0.1, 0.3))
-            kb.press_key("delete"); kb.sleep(random.uniform(0.05, 0.15))
+            kb.press_key("backspace"); kb.sleep(random.uniform(0.05, 0.15))
             kb.type_char(c.correct_char)
-            cursor = target - 1
+            # cursor distance from end stays the same (deleted one, typed one)
             kb.sleep(random.uniform(0.2, 0.6))
         if cursor > 0:
             kb.hotkey("ctrl", "end")
@@ -238,8 +239,13 @@ class TypingSession:
                     if self._verbose: ui.console.print(f"[dim]  pause {p.duration:.2f}s[/dim]")
                     self._kb.sleep(p.duration)
                 r = self._h.maybe_retype()
-                if r and i + r.length < len(self._text):
+                if r and i + 1 + r.length < len(self._text):
+                    # Type the space first, then retype the next chunk
+                    self._kb.sleep(self._h.inter_key_delay())
+                    self._kb.type_char(ch)
                     self._retype(i + 1, r.length)
+                    i += 1 + r.length  # skip past space + retyped chars
+                    continue
 
             self._kb.sleep(self._h.inter_key_delay())
 
