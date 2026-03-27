@@ -64,3 +64,6 @@ Run `paste-plus -h` for the full list of options.
 ## Screenshots
 <img src="https://github.com/Techno-gen/Paste-Plus/blob/main/Screenshots/Homepage.png" width="75%">
 <img src="https://github.com/Techno-gen/Paste-Plus/blob/main/Screenshots/Starthisgif.gif" width="50%"><br/>
+
+## Disclaimer
+This software is not designed for plagiarism and has never been intended as a cheating tool. Any dsiciplinary action taken against you as a consequence of using this software is your own responsibility.
